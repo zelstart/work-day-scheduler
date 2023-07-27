@@ -31,8 +31,7 @@ $(function () {
   // for each element with the time-block class...
   $('.time-block').each(function() {
     // ... set the text area of the corresponding hour id to the saved value
-$('.description').text
-localStorage.getItem(hour, task)
+$('.description').text(localStorage.getItem(hour, task)) // not sure how to make it work
 })
 
 
@@ -47,7 +46,9 @@ localStorage.getItem(hour, task)
   // for each element with the time-block class...
   $('.time-block').each(function () {
     // ...remove the string "hour-" from the id, and blockHour equals what remains
-    var blockHour = "" // But I can't figure out exactly how to do that
+    var blockHour = "" // But I can't figure out exactly how to do that. 
+    // assuming I have to use split or replace but I don't know the syntax needed to specifically grab
+    // the id's i want within the html.
     var currentHour = dayjs().hour();
 
 // if the blockHour is the same as currentHour, add the class "present", remove "past" and "future"
@@ -72,10 +73,4 @@ localStorage.getItem(hour, task)
   }
 
 })
-
-  
-
-
-
-
 });
