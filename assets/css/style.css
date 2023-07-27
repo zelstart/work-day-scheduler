@@ -1,5 +1,5 @@
 :root {
-  --bg: #3d3b37;
+  --bg: #4c4b49;
   --dark: #282724;
   --light: #f8e1a0;
   --accent: #f48506;
@@ -39,6 +39,7 @@ body {
 .custom-text3 {
   color: var(--light2);
   font-weight: 400;
+  font-size: 1.5em;
   text-shadow: var(--shadow) 1px 1px 2px;
 }
 
