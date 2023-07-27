@@ -15,12 +15,6 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-
-  var currentHour = dayjs().hour();
-  var timeBlock = $('.time-block');
-
-
-
   $('.saveBtn').click(function(){
     var task = $(this).siblings(".description").val(); // siblings of saveBtn clicked, with a class called description. will save value of text area
     var hour = $(this).parent().attr("id"); // looks for the parent of the saveBtn clicked, saves the id 
@@ -35,9 +29,9 @@ $(function () {
   // attribute of each time-block be used to do this?
 
   // for each element with the time-block class...
-  timeBlock.each(function() {
+  $('.time-block').each(function() {
     // ... set the text area of the corresponding hour id to the saved value
-
+$('.description').text
 localStorage.getItem(hour, task)
 })
 
@@ -51,10 +45,10 @@ localStorage.getItem(hour, task)
 
 
   // for each element with the time-block class...
-  timeBlock.each(function () {
+  $('.time-block').each(function () {
     // ...remove the string "hour-" from the id, and blockHour equals what remains
     var blockHour = "" // But I can't figure out exactly how to do that
-
+    var currentHour = dayjs().hour();
 
 // if the blockHour is the same as currentHour, add the class "present", remove "past" and "future"
   if (currentHour === blockHour) {
