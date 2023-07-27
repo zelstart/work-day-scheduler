@@ -52,13 +52,21 @@ textarea {
   white-space: pre-wrap;
 }
 
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
 .time-block {
   border-radius: 15px;
   box-shadow: var(--shadow) 5px 5px 5px;
 }
 
 .row {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
 
 .hour {
@@ -67,6 +75,7 @@ textarea {
   border-top-left-radius: 9px;
   border-bottom-left-radius: 9px;
   border-right: 2px solid var(--white);
+  position: relative;
 }
 
 .past {
