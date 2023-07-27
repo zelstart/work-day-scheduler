@@ -8,21 +8,40 @@ $(function () {
 
 
 
-  var currentHour = dayjs().hour();
-  var timeBlock = $('.time-block');
-  var saveBtn = $('.saveBtn');
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  saveBtn.addEventListener("click", function(){
-    var hour = $(this).siblings(".description").val();
-    var task = $(this).parent().attr("id");
 
-    localStorage.setItem(hour, task)
+  var currentHour = dayjs().hour();
+  var timeBlock = $('.time-block');
+
+
+
+  $('.saveBtn').click(function(){
+    var task = $(this).siblings(".description").val(); // siblings of saveBtn clicked, with a class called description. will save value of text area
+    var hour = $(this).parent().attr("id"); // looks for the parent of the saveBtn clicked, saves the id 
+
+    localStorage.setItem(hour, task) // saves the contents of task and hour of saveBtn clicked to local storage
+
   })
+
+
+    // TODO: Add code to get any user input that was saved in localStorage and set
+  // the values of the corresponding textarea elements. HINT: How can the id
+  // attribute of each time-block be used to do this?
+
+  // for each element with the time-block class...
+  timeBlock.each(function() {
+    // ... set the text area of the corresponding hour id to the saved value
+
+localStorage.getItem(hour, task)
+})
+
+
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -59,9 +78,7 @@ $(function () {
   }
 
 })
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
+
   
 
 
